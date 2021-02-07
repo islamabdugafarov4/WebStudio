@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}
+    {% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+<aside>
+
+    <ul class="list-group">
+        <li><a href={% url 'home'  %}><i class="fa fa-home"></i>Главная</a></li>
+        <li ><a href=""><i class="far fa-newspaper"></i>Новости</a></li>
+        <li><a href=""><i class="fa fa-list"></i>Меню</a></li>
+        <li ><a href="{% url 'about' %}">О нас</a></li>
+        <li ><a href="{% url 'contacts' %}"><i class="fa fa-address-book"></i>Контакты</a></li>
+    </ul>
+</aside>
+<main>
+    {% block content %}
+{% endblock %}
+</main>
+
+</body>
+</html>
